@@ -9,15 +9,12 @@ variable "cluster_password" {
 }
 variable "client_cert" {
   type = "string"
-  default = "${file("~/.kube/client-cert.pem")}"
 }
 variable "client_key" {
   type = "string"
-  default = "${file("~/.kube/client-key.pem")}"
 }
 variable "cluster_ca_cert" {
   type = "string"
-  default = "${file("~/.kube/cluster-ca-cert.pem")}"
 }
 
 
