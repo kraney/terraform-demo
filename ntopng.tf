@@ -6,6 +6,7 @@ variable "cluster_username" {
 }
 variable "cluster_password" {
   type = "string"
+  default = ""
 }
 variable "client_cert" {
   type = "string"
