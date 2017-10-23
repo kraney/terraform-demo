@@ -20,6 +20,7 @@ variable "cluster_ca_cert" {
 
 
 provider "helm" {
+    home = ".helm"
     kubernetes {
         host     = "${var.cluster_host}"
         username = "${var.cluster_username}"
