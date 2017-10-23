@@ -35,7 +35,7 @@ provider "helm" {
 resource "helm_chart" "ntopng" {
   repository = "http://kraney-netservice-helm.s3-website-us-east-1.amazonaws.com/"
   name = "terraform-ntop"
-  chart = "netservices/ntopng"
+  chart = "ntopng"
   version = "0.1.0"
   namespace = "kraney"
   set {
