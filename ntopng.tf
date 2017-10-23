@@ -7,6 +7,18 @@ variable "cluster_username" {
 variable "cluster_password" {
   type = "string"
 }
+variable "client_cert" {
+  type = "string"
+  default = "${file("~/.kube/client-cert.pem")}"
+}
+variable "client_key" {
+  type = "string"
+  default = "${file("~/.kube/client-key.pem")}"
+}
+variable "cluster_ca_cert" {
+  type = "string"
+  default = "${file("~/.kube/cluster-ca-cert.pem")}"
+}
 
 
 provider "helm" {
@@ -15,9 +27,9 @@ provider "helm" {
         username = "${var.cluster_username}"
         password = "${var.cluster_password}"
 
-        client_certificate     = "${file("~/.kube/client-cert.pem")}"
-        client_key             = "${file("~/.kube/client-key.pem")}"
-        cluster_ca_certificate = "${file("~/.kube/cluster-ca-cert.pem")}"
+        client_certificate     = "${var.client_cert}"
+        client_key             = "${var.client_key}"
+        cluster_ca_certificate = "${var.cluster_ca_cert}"
     }
 }
 
